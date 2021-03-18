@@ -1,12 +1,13 @@
 package rosca.classes;
 
 //region Imports
-import rosca.classes.CreateDatabaseAndConnection;
 import java.sql.SQLException;
 import java.sql.Statement;
 //endregion
 
 public class CreateTable extends CreateDatabaseAndConnection {
+    //Fields
+    private Statement statement = super.getConnection().createStatement();
 
     //Constructor
     public CreateTable(String databaseName) throws  SQLException {
@@ -15,8 +16,6 @@ public class CreateTable extends CreateDatabaseAndConnection {
         //Will be used for showing result to console
         int result = 0;
 
-        //Will work with this statement
-        Statement statement = super.getConnection().createStatement();
 
         //The table creation
         String createTable =    "CREATE TABLE IF NOT EXISTS database_table \n(\n" +
@@ -34,9 +33,6 @@ public class CreateTable extends CreateDatabaseAndConnection {
         //Code of operation, 1 if complete, 0 if table exists, -1 if error
         result = statement.executeUpdate(createTable);
 
-        //Closing the statement
-        statement.close();
-
         //Setting auto commit false
         super.getConnection().setAutoCommit(false);
 
@@ -46,5 +42,9 @@ public class CreateTable extends CreateDatabaseAndConnection {
         //Showing the result
         System.out.println("Table created, result: " + result);
         System.out.println("Query: \n\n" + createTable);
+    }
+
+    public Statement getStatement() {
+        return statement;
     }
 }

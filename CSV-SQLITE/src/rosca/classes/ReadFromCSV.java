@@ -1,8 +1,10 @@
 package rosca.classes;
 
 //region Imports
-import rosca.classes.CreateTable;
-import java.io.*;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.text.SimpleDateFormat;
@@ -99,7 +101,7 @@ public class ReadFromCSV extends CreateTable {
                         .append(J).append("\')").toString();
 
                 //Executing the update
-                statement.executeUpdate(sql);
+                super.getStatement().executeUpdate(sql);
 
                 //Executing the query
                 super.getConnection().commit();
@@ -146,6 +148,7 @@ public class ReadFromCSV extends CreateTable {
         read.close();
         writer.close();
         super.getConnection().close();
+        super.getStatement().close();
         //endregion
 
     }
