@@ -1,4 +1,4 @@
-# Interview task
+# CSV -> SQLite
 
 This program is made to parse the data from a .csv file, and introduce it to a SQLite database. 
 The rows which are not legit(they don't have 1 or more rows), the are written to a .csv with the name bad-<timestamp>.csv. Also at the end a log-<timestamp>.txt file is created, where is written how many rows were written, how many were successful, and how many were bad. 
