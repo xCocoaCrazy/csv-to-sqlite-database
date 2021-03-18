@@ -1,3 +1,3 @@
-# CSV-to-SQLite-Database
+# Interview task
 
-A project that introduces data from a CSV file to an SQLite database
+This is the task for the interview for the company Optimal Solutions Hub SRL.
