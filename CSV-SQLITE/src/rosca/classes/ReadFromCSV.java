@@ -43,7 +43,7 @@ public class ReadFromCSV extends CreateTable {
         Statement statement = super.getConnection().createStatement();
 
         //Declaring the file from which we will read
-        File myFile = new File("data.csv");
+        File myFile = new File("./Resources/data.csv");
 
         //Declaring the reader
         Scanner read = new Scanner(myFile);
