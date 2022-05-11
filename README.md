@@ -16,3 +16,6 @@ Also for Idea you can clone the project to a folder you wish and open the projec
 ## For Eclipse IDE
 For eclipse I've found only the version to clone the project to a folder you wish and then open the project by Open project from eclipse and choose vendingmachine folder.
 Be sure to use the proper SDK, which is "openjdk-18 version 18.0.1".
+
+###P.S.
+If you can't run the project or the src folder is not blue (for Intellij Idea), just go to File->Project Structure->Modules, click on src folder and at the top press "Sources", then apply and everything should be good to go.
