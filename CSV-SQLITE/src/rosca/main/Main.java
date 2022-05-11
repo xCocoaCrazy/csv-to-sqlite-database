@@ -20,6 +20,5 @@ public class Main {
             System.err.println("Oops, problems with file!");
             e.printStackTrace();
         }
-
     }
 }
